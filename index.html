@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aman Kaushal | Web Developer & AI Enthusiast</title>
+  <meta name="description" content="Portfolio of Aman Kaushal - B.Tech CSE (AI) student, Web Developer, React Developer, and Python Developer. Explore my projects, skills, and experience.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="#hero" class="nav-logo">AK.</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Hidden file inputs -->
+<input type="file" id="photo-upload" accept="image/*" hidden>
+<input type="file" id="resume-upload" accept=".pdf,.doc,.docx" hidden>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <canvas id="particles-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-greeting">👋 Hello, I'm</p>
+      <h1 class="hero-name">Aman <span class="gradient">Kaushal</span></h1>
+      <p class="hero-title">I'm a <span class="typed-text"></span><span class="cursor"></span></p>
+      <p class="hero-desc">Technology-focused B.Tech CSE (AI) student with hands-on experience in web development, data analytics, and AI-based solutions. Passionate about building scalable technology products.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">💬 Let's Talk</a>
+        <button class="btn btn-outline" id="download-resume-btn">📄 Upload / Download Resume</button>
+      </div>
+      <p style="margin-top:8px;font-size:0.8rem;color:var(--text-secondary);"><a href="#" id="upload-resume-link" style="color:var(--accent);text-decoration:none;">Click to upload your resume</a></p>
+      <div class="hero-socials">
+        <a href="mailto:amankau2000@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+916387815821" title="Phone" aria-label="Phone"><i class="fas fa-phone"></i></a>
+        <a href="https://linkedin.com/in/aman-kaushal" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/aman23-cmd" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://leetcode.com/u/aman.k9571" target="_blank" rel="noopener" title="LeetCode" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="photo-placeholder" title="Click to upload your photo">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/></svg>
+        <span>Click to Upload Photo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">About Me</span>
+      <h2 class="section-title">Who I Am</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm <strong>Aman Kaushal</strong>, a technology-focused B.Tech CSE (AI) student at <strong>Galgotias University</strong> with a strong foundation in web development, data analytics, and AI-based solutions.</p>
+        <p>Skilled in Python, SQL, Flask, and modern web technologies, I'm passionate about building scalable technology products and contributing to real-world software projects while continuously learning emerging technologies.</p>
+        <p>Currently working as a <strong>Junior Developer Intern at YatriYum</strong>, engineering responsive frontend landing pages using React and optimizing UI/UX components for enhanced user experience.</p>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-number" data-target="550" data-suffix="+">0</div>
+            <div class="stat-label">LeetCode Problems</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="2" data-suffix="+">0</div>
+            <div class="stat-label">Internships</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="5" data-suffix="+">0</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="8" data-suffix=".32">0</div>
+            <div class="stat-label">CGPA</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-details reveal">
+        <div class="detail-card">
+          <h3><span class="icon">🎓</span> Education</h3>
+          <p>B.Tech CSE (AI) from Galgotias University (2023–2027) with CGPA 8.32</p>
+        </div>
+        <div class="detail-card">
+          <h3><span class="icon">💼</span> Current Role</h3>
+          <p>Junior Developer Intern @ YatriYum — React, Cloudinary, Backend Integration</p>
+        </div>
+        <div class="detail-card">
+          <h3><span class="icon">🏆</span> Achievements</h3>
+          <p>SIH 2025 Pre-Qualifier | XLR8 AMPLIFIER'25 | 550+ LeetCode problems</p>
+        </div>
+        <div class="detail-card">
+          <h3><span class="icon">📍</span> Location</h3>
+          <p>India — Open to remote & on-site opportunities</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background: var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">My Skills</span>
+      <h2 class="section-title">Technologies I Work With</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid reveal">
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fab fa-python"></i></div>
+        <div class="skill-name">Python</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-bg"><div class="skill-bar-fill" data-level="90%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fab fa-java"></i></div>
+        <div class="skill-name">Java</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-bg"><div class="skill-bar-fill" data-level="75%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-bg"><div class="skill-bar-fill" data-level="85%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fab fa-react"></i></div>
+        <div class="skill-name">React</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-bg"><div class="skill-bar-fill" data-level="80%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fab fa-html5"></i></div>
+        <div class="skill-name">HTML</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-bg"><div class="skill-bar-fill" data-level="95%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+        <div class="skill-name">CSS</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-bg"><div class="skill-bar-fill" data-level="90%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+        <div class="skill-name">Node.js</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-bg"><div class="skill-bar-fill" data-level="70%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fab fa-php"></i></div>
+        <div class="skill-name">PHP</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-bg"><div class="skill-bar-fill" data-level="65%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-flask"></i></div>
+        <div class="skill-name">Flask</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-bg"><div class="skill-bar-fill" data-level="80%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-database"></i></div>
+        <div class="skill-name">MySQL</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-bg"><div class="skill-bar-fill" data-level="78%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-plug"></i></div>
+        <div class="skill-name">REST APIs</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-bg"><div class="skill-bar-fill" data-level="82%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fab fa-figma"></i></div>
+        <div class="skill-name">Figma</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-bg"><div class="skill-bar-fill" data-level="70%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+        <div class="skill-name">Git</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-bg"><div class="skill-bar-fill" data-level="85%"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-brain"></i></div>
+        <div class="skill-name">DSA</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-bg"><div class="skill-bar-fill" data-level="85%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Experience</span>
+      <h2 class="section-title">Where I've Worked</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-card">
+          <span class="timeline-date">Mar 2026 – Present</span>
+          <h3>Junior Developer Intern</h3>
+          <p class="company">@ YatriYum</p>
+          <ul>
+            <li>Engineered a responsive frontend landing page using React, improving user experience across multiple devices</li>
+            <li>Optimized UI/UX components, reducing page load time and improving navigation efficiency</li>
+            <li>Integrated Cloudinary for image upload and storage, streamlining media handling in the backend</li>
+            <li>Built backend functionalities to efficiently manage data and media processing</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-card">
+          <span class="timeline-date">Jan 2026 – Mar 2026</span>
+          <h3>Web Developer Intern</h3>
+          <p class="company">@ Codevirus Security Pvt. Ltd.</p>
+          <ul>
+            <li>Developed a Learning Management System (LMS) using PHP, MySQL, HTML, CSS, and JavaScript with features like notes upload and access</li>
+            <li>Designed and improved UI/UX for smooth navigation and better user experience</li>
+            <li>Built modules for live classes and contributed to CRM with employee login and attendance tracking</li>
+            <li>Awarded a Letter of Recommendation for performance and contribution</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background: var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Projects</span>
+      <h2 class="section-title">What I've Built</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-header">
+          <div class="project-icon" style="background:linear-gradient(135deg,rgba(0,212,255,0.2),rgba(123,97,255,0.2));">🤖</div>
+          <div class="project-links">
+            <a href="https://github.com/aman23-cmd" target="_blank" rel="noopener" title="GitHub Repo"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3>AI Resume Screening System</h3>
+          <p>Built a system to upload and analyze resumes (PDF/DOCX) using Python. Extracted text using NLP techniques, implemented resume classification and candidate shortlisting based on job roles. Integrated Flask and MySQL for backend and storage.</p>
+          <div class="project-tags">
+            <span>React</span><span>Python</span><span>Flask</span><span>MySQL</span><span>NLP</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-header">
+          <div class="project-icon" style="background:linear-gradient(135deg,rgba(123,97,255,0.2),rgba(255,107,157,0.2));">📊</div>
+          <div class="project-links">
+            <a href="https://github.com/aman23-cmd" target="_blank" rel="noopener" title="GitHub Repo"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3>Codegs of Delhi – JSON Data Viewer</h3>
+          <p>Built a Python-based tool to parse and visualize JSON data, improving data readability and reducing manual analysis effort. Converted complex JSON structures into a human-readable form for easy understanding.</p>
+          <div class="project-tags">
+            <span>Python</span><span>JSON</span><span>Data Parsing</span><span>CLI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Education</span>
+      <h2 class="section-title">My Academic Journey</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <span class="edu-year">2023 – 2027</span>
+        <h3>Bachelor of Technology (CSE – AI)</h3>
+        <p class="edu-inst">Galgotias University</p>
+        <p class="edu-score">CGPA: 8.32</p>
+      </div>
+      <div class="edu-card reveal">
+        <span class="edu-year">2023</span>
+        <h3>Senior Secondary (12th)</h3>
+        <p class="edu-inst">CBSE Board</p>
+        <p class="edu-score">Percentage: 75.1%</p>
+      </div>
+      <div class="edu-card reveal">
+        <span class="edu-year">2021</span>
+        <h3>Secondary (10th)</h3>
+        <p class="edu-inst">ICSE Board</p>
+        <p class="edu-score">Percentage: 77%</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS & ACHIEVEMENTS -->
+<section id="certifications" style="background: var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Recognition</span>
+      <h2 class="section-title">Certifications & Achievements</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="cert-ach-grid reveal">
+      <div class="cert-section">
+        <h3>🏅 Certifications</h3>
+        <div class="cert-item">
+          <div class="cert-icon">🐍</div>
+          <p>Python (Advanced & Expert) – <strong>HackerRank</strong></p>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon">☕</div>
+          <p>Java (Basics) – <strong>HackerRank</strong></p>
+        </div>
+      </div>
+      <div class="ach-section">
+        <h3>🏆 Achievements</h3>
+        <div class="ach-item">
+          <div class="ach-icon">💻</div>
+          <p>Solved <strong>550+</strong> problems on LeetCode — <a href="https://leetcode.com/u/aman.k9571" target="_blank" rel="noopener">View Profile</a></p>
+        </div>
+        <div class="ach-item">
+          <div class="ach-icon">🚀</div>
+          <p>Qualified <strong>Smart India Hackathon 2025</strong> Pre-Qualifier and selected in <strong>XLR8 AMPLIFIER'25</strong> hackathon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Get In Touch</span>
+      <h2 class="section-title">Let's Work Together</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-wrapper reveal">
+      <div class="contact-info">
+        <h3>Contact Info</h3>
+        <p>Feel free to reach out for collaborations, opportunities, or just a friendly chat!</p>
+        <a href="mailto:amankau2000@gmail.com" class="contact-item">
+          <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+          <div class="ci-text"><span>Email</span><p>amankau2000@gmail.com</p></div>
+        </a>
+        <a href="tel:+916387815821" class="contact-item">
+          <div class="ci-icon"><i class="fas fa-phone"></i></div>
+          <div class="ci-text"><span>Phone</span><p>+91-6387815821</p></div>
+        </a>
+        <a href="https://linkedin.com/in/aman-kaushal" target="_blank" rel="noopener" class="contact-item">
+          <div class="ci-icon"><i class="fab fa-linkedin-in"></i></div>
+          <div class="ci-text"><span>LinkedIn</span><p>linkedin.com/in/aman-kaushal</p></div>
+        </a>
+        <a href="https://github.com/aman23-cmd" target="_blank" rel="noopener" class="contact-item">
+          <div class="ci-icon"><i class="fab fa-github"></i></div>
+          <div class="ci-text"><span>GitHub</span><p>github.com/aman23-cmd</p></div>
+        </a>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="john@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Project Collaboration">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">🚀 Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 Aman Kaushal. Crafted with <span class="heart">❤</span> and lots of ☕</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
