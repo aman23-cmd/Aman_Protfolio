@@ -114,48 +114,8 @@ function type() {
 }
 type();
 
-// ===== PHOTO UPLOAD =====
-const photoInput = document.getElementById('photo-upload');
+// Photo is now a static asset (profile.jpg)
 const heroImgContainer = document.getElementById('hero-image-container');
-
-if (heroImgContainer) {
-  heroImgContainer.addEventListener('click', () => photoInput.click());
-}
-
-photoInput.addEventListener('change', (e) => {
-  const file = e.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      let img = heroImgContainer.querySelector('img');
-      if (!img) {
-        img = document.createElement('img');
-        img.alt = 'Aman Kaushal';
-        heroImgContainer.prepend(img);
-        const placeholder = heroImgContainer.querySelector('.photo-placeholder');
-        if (placeholder) placeholder.style.display = 'none';
-      }
-      img.src = ev.target.result;
-      localStorage.setItem('portfolioPhoto', ev.target.result);
-      showToast('Photo updated successfully!');
-    };
-    reader.readAsDataURL(file);
-  }
-});
-
-// Load saved photo
-const savedPhoto = localStorage.getItem('portfolioPhoto');
-if (savedPhoto && heroImgContainer) {
-  let img = heroImgContainer.querySelector('img');
-  if (!img) {
-    img = document.createElement('img');
-    img.alt = 'Aman Kaushal';
-    heroImgContainer.prepend(img);
-    const placeholder = heroImgContainer.querySelector('.photo-placeholder');
-    if (placeholder) placeholder.style.display = 'none';
-  }
-  img.src = savedPhoto;
-}
 
 // Removed redundant resume upload logic as requested.
 // Resume is now a direct static link in index.html.
