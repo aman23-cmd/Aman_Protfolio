@@ -116,11 +116,10 @@ type();
 
 // ===== PHOTO UPLOAD =====
 const photoInput = document.getElementById('photo-upload');
-const photoPlaceholder = document.querySelector('.photo-placeholder');
-const heroImgContainer = document.querySelector('.hero-image');
+const heroImgContainer = document.getElementById('hero-image-container');
 
-if (photoPlaceholder) {
-  photoPlaceholder.addEventListener('click', () => photoInput.click());
+if (heroImgContainer) {
+  heroImgContainer.addEventListener('click', () => photoInput.click());
 }
 
 photoInput.addEventListener('change', (e) => {
@@ -128,12 +127,17 @@ photoInput.addEventListener('change', (e) => {
   if (file) {
     const reader = new FileReader();
     reader.onload = (ev) => {
-      const img = document.createElement('img');
+      let img = heroImgContainer.querySelector('img');
+      if (!img) {
+        img = document.createElement('img');
+        img.alt = 'Aman Kaushal';
+        heroImgContainer.prepend(img);
+        const placeholder = heroImgContainer.querySelector('.photo-placeholder');
+        if (placeholder) placeholder.style.display = 'none';
+      }
       img.src = ev.target.result;
-      img.alt = 'Aman Kaushal';
-      heroImgContainer.innerHTML = '';
-      heroImgContainer.appendChild(img);
       localStorage.setItem('portfolioPhoto', ev.target.result);
+      showToast('Photo updated successfully!');
     };
     reader.readAsDataURL(file);
   }
@@ -141,55 +145,20 @@ photoInput.addEventListener('change', (e) => {
 
 // Load saved photo
 const savedPhoto = localStorage.getItem('portfolioPhoto');
-if (savedPhoto) {
-  const img = document.createElement('img');
+if (savedPhoto && heroImgContainer) {
+  let img = heroImgContainer.querySelector('img');
+  if (!img) {
+    img = document.createElement('img');
+    img.alt = 'Aman Kaushal';
+    heroImgContainer.prepend(img);
+    const placeholder = heroImgContainer.querySelector('.photo-placeholder');
+    if (placeholder) placeholder.style.display = 'none';
+  }
   img.src = savedPhoto;
-  img.alt = 'Aman Kaushal';
-  heroImgContainer.innerHTML = '';
-  heroImgContainer.appendChild(img);
 }
 
-// ===== RESUME UPLOAD =====
-const resumeInput = document.getElementById('resume-upload');
-const resumeBtn = document.getElementById('download-resume-btn');
-
-resumeBtn.addEventListener('click', (e) => {
-  const savedResume = localStorage.getItem('portfolioResume');
-  const savedName = localStorage.getItem('portfolioResumeName');
-  if (savedResume) {
-    const a = document.createElement('a');
-    a.href = savedResume;
-    a.download = savedName || 'Aman_Kaushal_Resume.pdf';
-    a.click();
-  } else {
-    e.preventDefault();
-    resumeInput.click();
-  }
-});
-
-document.getElementById('upload-resume-link').addEventListener('click', (e) => {
-  e.preventDefault();
-  resumeInput.click();
-});
-
-resumeInput.addEventListener('change', (e) => {
-  const file = e.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      localStorage.setItem('portfolioResume', ev.target.result);
-      localStorage.setItem('portfolioResumeName', file.name);
-      resumeBtn.innerHTML = '📄 Download Resume';
-      showToast('Resume uploaded successfully!');
-    };
-    reader.readAsDataURL(file);
-  }
-});
-
-// Load saved resume
-if (localStorage.getItem('portfolioResume')) {
-  resumeBtn.innerHTML = '📄 Download Resume';
-}
+// Removed redundant resume upload logic as requested.
+// Resume is now a direct static link in index.html.
 
 // ===== SKILL BARS ANIMATION =====
 const skillCards = document.querySelectorAll('.skill-card');
@@ -224,6 +193,26 @@ function animateCounter(el, target) {
     el.textContent = Math.floor(current) + (el.dataset.suffix || '');
   }, 20);
 }
+
+// ===== LEETCODE STATS =====
+async function fetchLeetCodeStats() {
+  const username = 'aman_k9571';
+  const leetCodeEl = document.getElementById('leetcode-count');
+  try {
+    const response = await fetch(`https://leetcode-stats-api.herokuapp.com/${username}`);
+    const data = await response.json();
+    if (data.status === 'success' && data.totalSolved) {
+      leetCodeEl.dataset.target = data.totalSolved;
+      // If the counter is already animated, update it immediately
+      if (leetCodeEl.dataset.animated) {
+        animateCounter(leetCodeEl, data.totalSolved);
+      }
+    }
+  } catch (error) {
+    console.error('Error fetching LeetCode stats:', error);
+  }
+}
+fetchLeetCodeStats();
 
 const counters = document.querySelectorAll('.stat-number');
 const counterObserver = new IntersectionObserver((entries) => {

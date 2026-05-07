@@ -42,9 +42,8 @@
       <p class="hero-desc">Technology-focused B.Tech CSE (AI) student with hands-on experience in web development, data analytics, and AI-based solutions. Passionate about building scalable technology products.</p>
       <div class="hero-buttons">
         <a href="#contact" class="btn btn-primary">💬 Let's Talk</a>
-        <button class="btn btn-outline" id="download-resume-btn">📄 Upload / Download Resume</button>
+        <a href="resume.pdf" class="btn btn-outline" id="download-resume-btn" download>📄 Download Resume</a>
       </div>
-      <p style="margin-top:8px;font-size:0.8rem;color:var(--text-secondary);"><a href="#" id="upload-resume-link" style="color:var(--accent);text-decoration:none;">Click to upload your resume</a></p>
       <div class="hero-socials">
         <a href="mailto:amankau2000@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
         <a href="tel:+916387815821" title="Phone" aria-label="Phone"><i class="fas fa-phone"></i></a>
@@ -53,10 +52,13 @@
         <a href="https://leetcode.com/u/aman_k9571" target="_blank" rel="noopener" title="LeetCode" aria-label="LeetCode"><i class="fas fa-code"></i></a>
       </div>
     </div>
-    <div class="hero-image">
+    <div class="hero-image" id="hero-image-container">
       <div class="photo-placeholder" title="Click to upload your photo">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/></svg>
         <span>Click to Upload Photo</span>
+      </div>
+      <div class="photo-edit-overlay">
+        <i class="fas fa-camera"></i>
       </div>
     </div>
   </div>
@@ -77,7 +79,7 @@
         <p>Currently working as a <strong>Junior Developer Intern at YatriYum</strong>, engineering responsive frontend landing pages using React and optimizing UI/UX components for enhanced user experience.</p>
         <div class="about-stats">
           <div class="stat-card">
-            <div class="stat-number" data-target="550" data-suffix="+">0</div>
+            <div class="stat-number" id="leetcode-count" data-target="550" data-suffix="+">0</div>
             <div class="stat-label">LeetCode Problems</div>
           </div>
           <div class="stat-card">
