@@ -232,6 +232,32 @@ document.getElementById('contact-form').addEventListener('submit', (e) => {
   e.target.reset();
 });
 
+// ===== 3D TILT EFFECT =====
+function init3DTilt() {
+  const cards = document.querySelectorAll('.skill-card, .project-card, .stat-card, .timeline-card, .edu-card, .cert-item, .ach-item');
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = (centerY - y) / 10;
+      const rotateY = (x - centerX) / 10;
+      
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px) scale(1.02)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+    });
+  });
+}
+init3DTilt();
+
 // ===== TOAST =====
 function showToast(msg) {
   const toast = document.createElement('div');

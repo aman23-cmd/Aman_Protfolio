@@ -85,6 +85,7 @@ body {
 .hero {
   min-height: 100vh; display: flex; align-items: center; justify-content: center;
   position: relative; overflow: hidden; padding: 100px 40px 60px;
+  perspective: 1000px;
 }
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
@@ -152,6 +153,14 @@ body {
   flex-shrink: 0; width: 320px; height: 320px;
   border-radius: 50%; position: relative;
   cursor: pointer; overflow: hidden;
+  transform-style: preserve-3d;
+  animation: float3D 6s ease-in-out infinite;
+}
+@keyframes float3D {
+  0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
+  25% { transform: translateY(-10px) rotateX(5deg) rotateY(-5deg); }
+  50% { transform: translateY(0) rotateX(0) rotateY(5deg); }
+  75% { transform: translateY(10px) rotateX(-5deg) rotateY(-5deg); }
 }
 .hero-image::before {
   content: ''; position: absolute; inset: -4px;
@@ -474,10 +483,11 @@ section { padding: 100px 40px; }
 
 /* ===== ANIMATIONS ===== */
 .reveal {
-  opacity: 0; transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  opacity: 0; transform: translateY(40px) rotateX(-10deg) scale(0.9);
+  transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1), transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+  backface-visibility: hidden;
 }
-.reveal.active { opacity: 1; transform: translateY(0); }
+.reveal.active { opacity: 1; transform: translateY(0) rotateX(0) scale(1); }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
